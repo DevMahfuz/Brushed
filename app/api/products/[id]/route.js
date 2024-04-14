@@ -1,11 +1,6 @@
-import { NextResponse } from "next/server";
+const { NextResponse } = require("next/server");
 
-// export async function GET(request: Request) {
-//   const { id } = request.;
-//   return NextResponse.json({ id: id });
-// }
-
-const productArry = [
+const productArray = [
   {
     id: 23,
     name: "Wedding Day Makeup",
@@ -33,8 +28,12 @@ const productArry = [
   },
 ];
 
-export async function GET(request, context: { params }) {
-  const id = context.params.id; // '1'
-  let parsId = Number(id);
-  return NextResponse.json({ id: parsId });
+async function GET(request, context) {
+  const id = context.params.id;
+  let parsedId = Number(id);
+  return NextResponse.json({ id: parsedId });
 }
+
+module.exports = {
+  GET,
+};
