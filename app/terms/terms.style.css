@@ -1,0 +1,17 @@
+.terms-page {
+  width: 100%;
+}
+
+.terms-page h1 {
+  font-size: 50px;
+  margin: 50px 0px;
+}
+
+.terms-page h3 {
+  font-size: 25px;
+}
+
+.terms-page p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

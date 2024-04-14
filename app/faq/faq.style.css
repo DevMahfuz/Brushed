@@ -1,0 +1,25 @@
+.faq-page h2 {
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+}
+.faq-wraper {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  min-height: 100vh;
+}
+.faq-question {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  background-color: antiquewhite;
+  margin-top: 10px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.faq-answer {
+  padding: 10px;
+  background-color: rgb(245, 239, 231);
+}

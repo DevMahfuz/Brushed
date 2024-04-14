@@ -25,9 +25,544 @@
     @apply border-foreground/20;
   }
 }
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
 .animate-in {
   animation: animateIn 0.3s ease 0.15s both;
+}
+
+.header {
+  width: 100%;
+  padding: 10px 0px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  z-index: 9999;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+  z-index: 1;
+}
+.logo {
+  flex: 1;
+}
+.auth-btn {
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.auth-btn a {
+  background-color: #000;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.drop-down-menue {
+  position: absolute;
+  top: 54px;
+  left: -50px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px -2px inset,
+    rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
+  width: max-content !important;
+}
+.drop-down-menue a {
+  padding: 10px 40px;
+  transition: all 0.5s ease;
+}
+.drop-down-menue a:hover {
+  color: tomato;
+}
+.mobile-nav {
+  display: none;
+}
+.mobile-auth-btn {
+  display: none;
+}
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-hero video {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  z-index: 0;
+}
+.home-hero .content {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background: transparent;
+}
+.home-hero .content h1 {
+  font-size: 70px;
+  font-weight: bold;
+  color: #fff;
+}
+.home-hero .content a {
+  padding: 10px 30px;
+  background-color: #ffffff88;
+  color: #000;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.home-hero .content a:hover {
+  background-color: #fff;
+}
+
+.home-mission {
+  display: block;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 38px;
+}
+.home-mission .container p {
+  border-left: 1px solid #111;
+  padding: 0px 50px;
+}
+
+.home-beauty {
+  width: 100%;
+}
+.home-beauty h2 {
+  font-size: 46px;
+  font-weight: 750;
+  line-height: 1.17;
+  font-family: Garnett;
+}
+.home-beauty .beauty-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  gap: 50px;
+}
+.home-beauty .beauty-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+}
+.home-beauty .beauty-card h3 {
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  font-family: Euclid;
+  font-weight: 600;
+  line-height: 1.24;
+}
+.home-beauty .beauty-card p {
+  width: 100%;
+  text-align: left;
+  line-height: 30px;
+}
+.home-beauty .beauty-card a {
+  position: absolute;
+  bottom: 50px;
+  margin: 0 auto;
+  padding: 10px 30px;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.home-beauty .beauty-card a:hover {
+  background-color: #000;
+  color: #fff;
+}
+.home-how-to-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0px;
+}
+.home-how-to-book h2 {
+  font-size: 46px;
+  font-weight: 750;
+  line-height: 1.17;
+  font-family: Garnett;
+  text-align: left;
+  margin: 0 0 24px 0;
+  text-shadow: none;
+  color: #000000;
+}
+.home-how-to-book .items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Euclid;
+  margin-bottom: 50px;
+}
+.home-how-to-book .items span {
+  margin-right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: navy;
+}
+.home-how-to-book a {
+  font-size: 18px;
+  color: #000;
+  min-width: 200px;
+  min-height: 48px;
+  padding: 14px 50px;
+  cursor: pointer;
+  border: 1px solid #999;
+  text-align: center;
+  margin: 0;
+}
+
+.home-get-to-know {
+  position: relative;
+  width: 100%;
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.home-get-to-know .left {
+  flex: 1;
+  width: 50%;
+}
+.home-get-to-know .left img {
+  width: 100%;
+}
+.home-get-to-know .right {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  padding-top: 200px;
+  padding-left: 200px;
+}
+.home-get-to-know .right h3 {
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.17;
+  font-family: Garnett;
+  text-align: left;
+  text-shadow: none;
+  color: #f7cbc5;
+}
+.home-get-to-know .right h4 {
+  font-size: 46px;
+  font-weight: 750;
+  line-height: 1.17;
+  font-family: Garnett;
+  text-align: left;
+  margin: 0 0 60px 0;
+  text-shadow: none;
+  color: #f7cbc5;
+}
+.home-get-to-know .right p {
+  width: 60%;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: Euclid;
+  line-height: 50px;
+  text-shadow: none;
+  letter-spacing: 0.22px;
+  margin: 0 0 24px 0;
+  color: #f7cbc5;
+  border-bottom: 1px solid #f7cbc5;
+}
+.home-get-to-know .right .link {
+  margin-top: 50px !important;
+}
+.home-get-to-know .right a {
+  letter-spacing: 0.94px;
+  font-weight: 600;
+  border: solid 1px #f7cbc5;
+  font-size: 18px;
+  color: #f7cbc5;
+  min-width: 200px;
+  min-height: 48px;
+  padding: 14px 50px;
+}
+.home-our-serves {
+  width: 100%;
+  background: url(/img/Dubai-lights.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+.home-our-serves .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 120px;
+  font-weight: bold;
+  text-shadow: 1px 1px #000;
+  text-align: center;
+}
+
+.home-review-slider {
+  width: 100%;
+  position: relative;
+  background-color: navy;
+  padding: 100px 0px;
+  color: #fff;
+}
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+footer {
+  margin: 0px 20px;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #000;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 50px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+footer .container .menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+footer .container .menu-container h3 {
+  font-size: x-large;
+  font-weight: bold;
+}
+footer .container .follow-us {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+footer .container .follow-us svg {
+  width: 30px;
+}
+footer img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding: 10px;
+  }
+  .header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .logo img {
+    width: 150px;
+  }
+  .mobile-nav {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    width: 90%;
+  }
+  .mobile-nav svg {
+    width: 20px;
+  }
+  .auth-btn {
+    display: none;
+  }
+  .mobile-menu-items {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    font-size: x-large;
+    font-weight: bold;
+    gap: 20px;
+  }
+  .mobile-menu-items svg {
+    position: absolute;
+    width: 30px;
+    right: 0px;
+    top: 0px;
+  }
+  .mobile-dropdown {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #cccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    flex-wrap: wrap;
+  }
+  .mobile-dropdown ul {
+    display: block;
+    width: 100%;
+  }
+  .mobile-dropdown ul li {
+    font-size: medium;
+    font-weight: bold;
+  }
+  .mobile-auth-btn {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .mobile-auth-btn svg {
+    width: 20px;
+  }
+  .home-hero .content {
+    width: 90%;
+    margin: auto;
+  }
+  .home-hero .content h1 {
+    font-size: 40px;
+  }
+  .home-mission {
+    display: block;
+    margin: 0px;
+    padding: 50px;
+    font-size: 20px;
+    margin-top: 50px;
+  }
+  .home-mission .container p {
+    border-left: 1px solid #111;
+    padding: 20px;
+  }
+  .home-beauty h2 {
+    font-size: 30px;
+    padding: 10px;
+  }
+  .home-beauty .beauty-card-container {
+    align-items: center;
+    justify-content: center;
+  }
+  .home-how-to-book .items {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-get-to-know {
+    position: relative;
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .home-get-to-know .left {
+    flex: 1;
+    width: 100%;
+  }
+  .home-get-to-know .left img {
+    width: 100%;
+  }
+  .home-get-to-know .right {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding: 20px;
+  }
+  .home-get-to-know .right h3 {
+    font-size: 20px;
+    font-weight: 750;
+    line-height: 1.17;
+    font-family: Garnett;
+    text-align: left;
+    text-shadow: none;
+    color: #f7cbc5;
+  }
+  .home-get-to-know .right h4 {
+    font-size: 46px;
+    font-weight: 750;
+    line-height: 1.17;
+    font-family: Garnett;
+    text-align: left;
+    margin: 0 0 30px 0;
+    text-shadow: none;
+    color: #f7cbc5;
+  }
+  .home-get-to-know .right p {
+    width: 100%;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: Euclid;
+    line-height: 50px;
+    text-shadow: none;
+    letter-spacing: 0.22px;
+    margin: 0 0 24px 0;
+    color: #f7cbc5;
+    border-bottom: 1px solid #f7cbc5;
+  }
+  .home-get-to-know .right .link {
+    margin-top: 50px !important;
+    text-align: center;
+  }
+
+  .home-get-to-know .right a {
+    letter-spacing: 0.94px;
+    font-weight: 600;
+    border: solid 1px #f7cbc5;
+    font-size: 18px;
+    color: #f7cbc5;
+    min-width: 200px;
+    min-height: 48px;
+    padding: 14px 50px;
+  }
+  footer .container .follow-us {
+    gap: 5px;
+  }
 }
 
 @keyframes animateIn {

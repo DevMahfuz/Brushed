@@ -1,0 +1,18 @@
+.privacy-page {
+  width: 100%;
+}
+
+.privacy-page h1 {
+  font-size: 50px;
+}
+
+.privacy-page h3 {
+  font-size: 25px;
+}
+
+.privacy-page p {
+  margin: 20px 0px;
+}
+.privacy-page ul {
+  padding-left: 20px;
+}

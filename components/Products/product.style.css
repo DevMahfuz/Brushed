@@ -1,0 +1,221 @@
+.produtcs-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.product-container {
+  flex: 1;
+  min-width: 40%;
+  background-color: #f9f4ee;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Euclid;
+}
+.product-container h2 {
+  font-size: 32px;
+  font-weight: 750;
+  line-height: 140%;
+  font-family: Garnett;
+}
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.product-info p {
+  white-space: nowrap;
+}
+.product-info button {
+  border: 1px solid #000;
+  padding: 10px 30px;
+  transition: all 0.5s ease;
+}
+.product-info button:hover {
+  background-color: tomato;
+  color: white;
+}
+.product-info svg {
+  width: 20px;
+  display: inline-block;
+  margin-right: 30px;
+}
+.pop-up-product-view {
+  z-index: 99999999;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #ffffffb5;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.pop-up-product-view .close-product {
+  width: 100%;
+  text-align: right;
+  padding: 50px;
+}
+
+.product-pre-view-container {
+  display: flex;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.product-pre-view-container .left {
+  width: 100%;
+  max-width: 400px;
+  background-color: beige;
+  padding: 20px;
+}
+.product-pre-view-container .left h3 {
+  font-size: 30px;
+}
+.product-pre-view-container .left .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: #636363;
+}
+.product-pre-view-container .left .info .price {
+  font-size: 30px;
+  color: #000;
+}
+.product-pre-view-container svg {
+  width: 20px;
+  margin-right: 20px;
+
+  display: inline-block;
+}
+.product-pre-view-container .left p {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.product-pre-view-container .left .client-number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.count-container {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #cccc;
+}
+.count-container button {
+  background-color: #ffe6e6;
+  padding: 5px 20px;
+}
+.product-pre-view-container .left input {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #636363;
+  border-radius: 5px;
+}
+.pro-option-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.pro-option-item {
+  border: 1px solid tomato;
+  padding: 10px;
+  flex: 1;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.pro-option-container .active {
+  background-color: rgb(252, 168, 153);
+}
+.pro-option-item h4 {
+  font-weight: bold;
+}
+
+.product-pre-view-container .left .cta-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.product-pre-view-container .left .details .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.product-pre-view-container .right {
+  width: 100%;
+  max-width: 400px;
+  background-color: beige;
+  padding: 20px;
+  background-color: rgb(249, 244, 238);
+}
+.product-pre-view-container .right .add-ons-container {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+
+.add-ons-container .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: larger;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.add-ons-container .foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-ons-container .foot button {
+  padding: 5px 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+.product-pre-view-container .right .active {
+  background-color: #00000078;
+  color: #fff;
+}
+
+@media only screen and (max-width: 800px) {
+  .produtcs-container {
+    flex-direction: column;
+    overflow: scroll;
+  }
+  .product-pre-view-container {
+    overflow: auto;
+  }
+  .product-pre-view-container .left,
+  .product-pre-view-container .right {
+    width: 100%;
+    max-width: 100%;
+  }
+}

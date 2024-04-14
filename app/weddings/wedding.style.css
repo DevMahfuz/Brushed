@@ -1,0 +1,120 @@
+.wedding-hero {
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  background-color: navy;
+}
+
+.wedding-hero .left {
+  width: 50%;
+  height: 100%;
+  position: "relative";
+  padding: 100px;
+}
+.wedding-hero .left h1 {
+  font-size: 54px;
+  font-weight: 750;
+  line-height: 140%;
+  font-family: Garnett;
+  color: rgb(247, 203, 197);
+  text-align: left;
+}
+.wedding-hero .left p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.wedding-hero .right {
+  width: 50%;
+  height: 100%;
+  position: "relative";
+}
+
+.wedding-why {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgb(249, 244, 238);
+  padding: 50px 88px;
+}
+.wedding-why h2 {
+  font-size: 46px;
+  font-weight: bold;
+
+  text-align: left;
+  margin: 0px;
+  text-shadow: none;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+.wedding-why .reasons {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wedding-why .reasons .card h3 {
+  font-size: 25px;
+  font-family: Euclid;
+  font-weight: 700;
+}
+
+.wedding-slider-wraper {
+  width: 90%;
+  color: #000;
+}
+.wedding-slider-wraper h2 {
+  font-size: 46px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}
+.send-request {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.send-request h2 {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+.send-request a {
+  padding: 12px 40px;
+  background-color: tomato;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 800px) {
+  .wedding-hero {
+    flex-direction: column-reverse;
+  }
+  .wedding-hero .left,
+  .wedding-hero .right {
+    width: 100%;
+  }
+  .wedding-hero .left {
+    padding: 40px;
+  }
+
+  .wedding-hero .left h1 {
+    font-size: 30px;
+  }
+  .wedding-why .reasons {
+    display: flex;
+    flex-direction: column;
+  }
+}
