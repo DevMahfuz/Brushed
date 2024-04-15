@@ -49,7 +49,6 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <img src="/img/logo.png" alt="logo" />
     </footer>
   );
 };

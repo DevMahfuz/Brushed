@@ -130,7 +130,6 @@ const PreViewProduct = ({ id }) => {
   }, []);
 
   const addServiceForBooking = () => {
-    console.log("start");
     setServiceToAdd(ServiceToAdd);
     router.push("/booking");
   };

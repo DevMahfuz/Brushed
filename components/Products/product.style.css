@@ -12,13 +12,11 @@
   padding: 20px;
   font-size: 20px;
   font-weight: 400;
-  font-family: Euclid;
 }
 .product-container h2 {
   font-size: 32px;
   font-weight: 750;
   line-height: 140%;
-  font-family: Garnett;
 }
 .product-info {
   display: flex;

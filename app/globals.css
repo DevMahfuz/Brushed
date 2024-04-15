@@ -25,11 +25,12 @@
     @apply border-foreground/20;
   }
 }
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -163,7 +164,6 @@ body {
   font-size: 46px;
   font-weight: 750;
   line-height: 1.17;
-  font-family: Garnett;
 }
 .home-beauty .beauty-card-container {
   display: flex;
@@ -186,7 +186,7 @@ body {
   width: 100%;
   text-align: left;
   font-size: 20px;
-  font-family: Euclid;
+
   font-weight: 600;
   line-height: 1.24;
 }
@@ -218,7 +218,6 @@ body {
   font-size: 46px;
   font-weight: 750;
   line-height: 1.17;
-  font-family: Garnett;
   text-align: left;
   margin: 0 0 24px 0;
   text-shadow: none;
@@ -232,14 +231,13 @@ body {
   gap: 50px;
   font-size: 20px;
   font-weight: 400;
-  font-family: Euclid;
   margin-bottom: 50px;
 }
 .home-how-to-book .items span {
   margin-right: 10px;
   font-size: 30px;
   font-weight: bold;
-  color: navy;
+  color: #4a686a;
 }
 .home-how-to-book a {
   font-size: 18px;
@@ -256,7 +254,7 @@ body {
 .home-get-to-know {
   position: relative;
   width: 100%;
-  background-color: blue;
+  background-color: #4a686a;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -279,7 +277,6 @@ body {
   font-size: 20px;
   font-weight: 750;
   line-height: 1.17;
-  font-family: Garnett;
   text-align: left;
   text-shadow: none;
   color: #f7cbc5;
@@ -288,7 +285,6 @@ body {
   font-size: 46px;
   font-weight: 750;
   line-height: 1.17;
-  font-family: Garnett;
   text-align: left;
   margin: 0 0 60px 0;
   text-shadow: none;
@@ -298,7 +294,7 @@ body {
   width: 60%;
   font-size: 22px;
   font-weight: 400;
-  font-family: Euclid;
+
   line-height: 50px;
   text-shadow: none;
   letter-spacing: 0.22px;
@@ -340,7 +336,7 @@ body {
 .home-review-slider {
   width: 100%;
   position: relative;
-  background-color: navy;
+  background-color: #4a686a;
   padding: 100px 0px;
   color: #fff;
 }
@@ -418,6 +414,7 @@ footer img {
   }
   .mobile-menu-items {
     background-color: #fff;
+    color: #000;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -437,7 +434,7 @@ footer img {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #cccc;
+    border: 1px solid #282828cc;
     border-radius: 5px;
     padding: 5px 10px;
     flex-wrap: wrap;
@@ -494,10 +491,13 @@ footer img {
   .home-get-to-know {
     position: relative;
     width: 100%;
-    background-color: blue;
+    background-color: #4a686a;
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+  .home-how-to-book h2 {
+    text-align: center;
   }
   .home-get-to-know .left {
     flex: 1;
@@ -518,7 +518,6 @@ footer img {
     font-size: 20px;
     font-weight: 750;
     line-height: 1.17;
-    font-family: Garnett;
     text-align: left;
     text-shadow: none;
     color: #f7cbc5;
@@ -527,7 +526,6 @@ footer img {
     font-size: 46px;
     font-weight: 750;
     line-height: 1.17;
-    font-family: Garnett;
     text-align: left;
     margin: 0 0 30px 0;
     text-shadow: none;
@@ -537,7 +535,6 @@ footer img {
     width: 100%;
     font-size: 22px;
     font-weight: 400;
-    font-family: Euclid;
     line-height: 50px;
     text-shadow: none;
     letter-spacing: 0.22px;
@@ -559,6 +556,9 @@ footer img {
     min-width: 200px;
     min-height: 48px;
     padding: 14px 50px;
+  }
+  .home-our-serves .container {
+    font-size: 50px;
   }
   footer .container .follow-us {
     gap: 5px;

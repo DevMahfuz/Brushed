@@ -12,7 +12,6 @@ const NailsProducts = () => {
       );
   }, []);
 
-  console.log("isProducts", isProducts);
   return (
     <div className="produtcs-container">
       {isProducts?.map((x) => {
