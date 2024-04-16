@@ -12,6 +12,7 @@
   padding: 20px;
   font-size: 20px;
   font-weight: 400;
+  color: #000;
 }
 .product-container h2 {
   font-size: 32px;
@@ -207,6 +208,7 @@
   .produtcs-container {
     flex-direction: column;
     overflow: scroll;
+    color: #000;
   }
   .product-pre-view-container {
     overflow: auto;

@@ -384,6 +384,21 @@ footer img {
   width: 100%;
 }
 
+@media only screen and (max-width: 1200px) {
+  .home-get-to-know .right {
+    flex: 1;
+    width: 50%;
+    height: 100%;
+    padding-top: 100px;
+    padding-left: 100px;
+  }
+  .home-get-to-know .right p {
+    width: 70%;
+    font-size: 22px;
+    margin: 0 0 15px 0;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .container {
     padding: 10px;
@@ -405,6 +420,7 @@ footer img {
     left: 20px;
     top: 0px;
     width: 90%;
+    color: #000;
   }
   .mobile-nav svg {
     width: 20px;
