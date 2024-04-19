@@ -116,11 +116,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="home-our-serves">
-        <div className="container">
-          <h3>Our squad serves in Dubay City</h3>
-        </div>
-      </section>
       <section className="home-review-slider">
         <div className="container">
           <ReviewSlider />

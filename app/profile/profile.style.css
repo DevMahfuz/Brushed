@@ -1,0 +1,29 @@
+.profile-page .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.profile-page .container .left,
+.profile-page .container .right {
+  background-color: rgb(47, 141, 145);
+  color: #fff;
+  font-size: larger;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.profile-page .container .left button {
+  padding: 5px 20px;
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.profile-page .container .left h2,
+.profile-page .container .right h2 {
+  font-size: 50px;
+  color: burlywood;
+}

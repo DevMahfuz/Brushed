@@ -210,9 +210,9 @@ const PreViewProduct = ({ id }) => {
                 <g clipPath="url(#a)">
                   <path
                     fill="#000"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M6.586 10 8 11.414 9.414 10 15 4.414 13.586 3 8 8.586 2.414 3 1 4.414 6.586 10Z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </g>
                 <defs>
@@ -231,9 +231,9 @@ const PreViewProduct = ({ id }) => {
                 <g clipPath="url(#a)">
                   <path
                     fill="#000"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M9.414 4.414 8 3 6.586 4.414 1 10l1.414 1.414L8 5.83l5.586 5.585L15 10 9.414 4.414Z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </g>
                 <defs>

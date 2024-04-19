@@ -1,11 +1,9 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import HairProdutcs from "../../components/Products/HairProducts";
-import MakeupProducts from "../../components/Products/MakeupProducts";
-import NailsProducts from "../../components/Products/NailsProducts";
-import EventsProducts from "../../components/Products/EventsProducts";
-import WeddingsProducts from "../../components/Products/WeddingsProducts";
+import MenService from "../../components/Products/MenServices";
+import WomenServices from "../../components/Products/WomenServices";
+import WeddingsServices from "../../components/Products/WeddingsServices";
 
 const ProductSectionComponent = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -47,11 +45,9 @@ const ProductSectionComponent = () => {
   };
 
   const menuItems = [
-    { label: "Hair", id: 0 },
-    { label: "Makeup", id: 1 },
-    { label: "Nails", id: 2 },
-    { label: "Events", id: 3 },
-    { label: "Weddings", id: 4 },
+    { label: "Men", id: 0 },
+    { label: "Women", id: 1 },
+    { label: "Wedding/Event", id: 2 },
   ];
   return (
     <>
@@ -76,68 +72,22 @@ const ProductSectionComponent = () => {
 
       <section ref={sectionRefs[0]} id="section1">
         <div className="container">
-          <HairProdutcs />
-          <div className="extra-offer">
-            <p>Add a little something extra</p>
-            <h3>
-              Select your service, then choose from add-ons like extensions,
-              braids, and half-up styles.
-            </h3>
-          </div>
+          <MenService />
         </div>
         {/* content of section 1 */}
       </section>
       <section ref={sectionRefs[1]} id="section2">
         <div className="container">
-          <MakeupProducts />
-          <div className="extra-offer">
-            <p>Amp up your makeup</p>
-            <h3>
-              Select your service, then choose from add-ons like false lashes
-              and airbrush.
-            </h3>
-          </div>
+          <WomenServices />
         </div>
         {/* content of section 2 */}
       </section>
-      <section ref={sectionRefs[2]} id="section3">
+
+      <section ref={sectionRefs[2]} id="section4">
         <div className="container">
-          <NailsProducts />
-          <div className="extra-offer">
-            <p>Elevate your mani-pedi</p>
-            <h3>
-              Select your service, then choose from add-ons like spa pedis,
-              shellac, and gel service.
-            </h3>
-          </div>
-        </div>
-        {/* content of section 3 */}
-      </section>
-      <section ref={sectionRefs[3]} id="section4">
-        <div className="container">
-          <EventsProducts />
-          <div className="extra-offer">
-            <p>We got this covered</p>
-            <h3>
-              Whether you have a group of 4 or 400, our dedicated concierge team
-              will tailor your event experience to your needs.
-            </h3>
-          </div>
+          <WeddingsServices />
         </div>
         {/* content of section 4 */}
-      </section>
-      <section ref={sectionRefs[4]} id="section5">
-        <div className="container">
-          <WeddingsProducts />
-          <div className="extra-offer">
-            <p>Beauty for every moment</p>
-            <h3>
-              From your engagement photos to the big day, we're here for you
-              every step of the way.
-            </h3>
-          </div>
-        </div>
-        {/* content of section 5 */}
       </section>
     </>
   );

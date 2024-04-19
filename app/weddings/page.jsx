@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/footer/footer";
 import "./wedding.style.css";
-import WeddingsProducts from "@/components/Products/WeddingsProducts";
+import WeddingsServices from "@/components/Products/WeddingsServices";
 import WeddingSlider from "../../components/weddingSlider/WeddingSlider";
 
 const WeddingsPage = () => {
@@ -52,7 +52,7 @@ const WeddingsPage = () => {
         </div>
       </section>
       <section className="container" style={{ marginTop: "100px" }}>
-        <WeddingsProducts />
+        <WeddingsServices />
       </section>
       <section className="wedding-slider-wraper">
         <h2>As seen in</h2>

@@ -1,0 +1,45 @@
+.membership-hero {
+  width: 100%;
+  padding: 100px 0px;
+  background-color: #4a686a;
+  text-align: center;
+}
+
+.membership-hero h1 {
+  font-size: 70px;
+  font-weight: bold;
+  color: white;
+}
+
+.membership-hero h2 {
+  font-size: larger;
+  color: #d0d0d0;
+}
+.plan-container {
+  text-align: center;
+}
+.plan-item {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #4a686a;
+  border-radius: 10px;
+}
+.plan-item h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #4a686a;
+}
+.plan-item p {
+  margin: 20px;
+}
+
+.plan-item button {
+  background-color: #4a686a;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 50px;
+  transition: all 0.5s ease;
+}
+.plan-item button:hover {
+  opacity: 0.8;
+}

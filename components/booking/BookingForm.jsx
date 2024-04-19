@@ -82,13 +82,15 @@ const MultiStepForm = () => {
   const onSubmitForm = async () => {
     // Handle form submission, send data to server
     try {
-      const response = await axios.post("/api/submit-form", {
-        address,
-        selectedDate,
-        textareaValue,
-        selectedOption,
+      const response = await axios.post("/api/booking", {
+        address: address,
+        selected_date: selectedDate,
+        note: textareaValue,
+        address_type: selectedOption,
+        service: serviceToAdd,
+        payment: true,
       });
-      console.log(response.data);
+      console.log(response);
       // Optionally, reset form or show success message
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -223,7 +225,7 @@ const MultiStepForm = () => {
         </form>
       )}
       {step === 4 && (
-        <form onSubmit={handleSubmit(onSubmitPayment)}>
+        <form onSubmit={handleSubmit(onSubmitForm)}>
           {/* Payment form inputs go here */}
           <div className="service-card-box">
             <div className="service-card-row">
@@ -238,13 +240,17 @@ const MultiStepForm = () => {
               </div>
             ))}
             <div className="service-card-row">
+              <div>Client</div>
+              <div>{serviceToAdd.client}</div>
+            </div>
+            <div className="service-card-row">
               <strong>Total</strong>
               <strong>${serviceToAdd.totalPrice}</strong>
             </div>
           </div>
 
           <button className="btn-next" type="submit">
-            Pay & Book
+            Book now
           </button>
         </form>
       )}
