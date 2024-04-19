@@ -221,6 +221,12 @@ h2 {
     overflow: scroll;
     color: #000;
   }
+  .product-container {
+    width: 90%;
+  }
+  .product-container .product-info {
+    font-size: small;
+  }
   .product-pre-view-container {
     overflow: auto;
   }
