@@ -2,22 +2,25 @@
 
 import { useEffect, useState } from "react";
 import Product from "./Product";
+import useSWR from "swr";
+import Fetcher from "../../components/Fetcher/Fetcher";
+import Loader from "../Loader/Loader";
 
 const WeddingsServices = () => {
-  const [isProducts, setisProducts] = useState([]);
+  let { data, error, isLoading } = useSWR("./api/service/wedding", Fetcher);
 
-  useEffect(() => {
-    fetch("./api/service/wedding")
-      .then((res) => res.json())
-      .then((res) => setisProducts(res.data));
-  }, []);
+  if (isLoading) {
+    return <Loader />;
+  }
+  if (error) {
+    return "Fail to fetch data";
+  }
 
-  console.log("isProducts", isProducts);
   return (
     <>
       <h2>Wedding or Event</h2>
       <div className="produtcs-container">
-        {isProducts?.map((x) => {
+        {data.data.map((x) => {
           return <Product product={x} key={x.id} />;
         })}
       </div>

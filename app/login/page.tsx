@@ -21,11 +21,12 @@ export default function Login({
       password,
     });
 
+    console.log(error);
     if (error) {
       return redirect("/login?message=Could not authenticate user");
     }
 
-    return redirect("/protected");
+    return redirect("/profile");
   };
 
   const signUp = async (formData: FormData) => {
@@ -75,6 +76,7 @@ export default function Login({
       </Link>
 
       <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
+        <h1 className="text-4xl text-center">Log in</h1>
         <label className="text-md" htmlFor="email">
           Email
         </label>
@@ -101,13 +103,14 @@ export default function Login({
         >
           Sign In
         </SubmitButton>
-        <SubmitButton
-          formAction={signUp}
-          className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2"
-          pendingText="Signing Up..."
+        <Link
+          href="/signup"
+          className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2 text-center"
         >
           Sign Up
-        </SubmitButton>
+        </Link>
+
+        <Link href="/reset-password">Forgot Password?</Link>
         {searchParams?.message && (
           <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
             {searchParams.message}

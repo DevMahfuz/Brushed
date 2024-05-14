@@ -3,7 +3,7 @@ import "./product.style.css";
 import PreViewService from "./PreViewService";
 const Service = ({ product }) => {
   let [selectProduct, setSelectProduct] = useState(null);
-  console.log(product);
+
   return (
     <>
       <div className="product-container">

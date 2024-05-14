@@ -5,7 +5,9 @@ import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import axios from "axios";
 import { BookingContext } from "../context/booking/BookingContext";
-
+import { UserContext } from "../context/User/UserContext";
+import { redirect, useRouter } from "next/navigation";
+import { SendConfirmationEmail } from "../../lib/send-email/SendBookingConfirmMail";
 import "react-datepicker/dist/react-datepicker.css";
 
 import "./bookingForm.style.css";
@@ -17,27 +19,78 @@ const MultiStepForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const [step, setStep] = useState(1);
   const [address, setAddress] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [textareaValue, setTextareaValue] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
   const [paymentStatus, setPaymentStatus] = useState(null);
-
+  const { currentUser } = useContext(UserContext);
   const { serviceToAdd } = useContext(BookingContext);
+  const router = useRouter();
 
+  console.log("AAA", address);
   useEffect(() => {
-    var defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(25.0637, 55.1374), // Southwest corner of Dubai
-      new google.maps.LatLng(25.276987, 55.373655) // Northeast corner of Dubai
-    );
+    // Redirect to login if currentUser is null
+    if (!currentUser) {
+      redirect("/login");
+    }
+  }, [currentUser]);
+  useEffect(() => {
+    const initGooglePlacesAutocomplete = () => {
+      const defaultBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(25.0637, 55.1374), // Southwest corner of Dubai
+        new google.maps.LatLng(25.276987, 55.373655) // Northeast corner of Dubai
+      );
 
-    var input = document.getElementById("searchTextField");
+      const input = document.getElementById("searchTextField");
 
-    var searchBox = new google.maps.places.SearchBox(input, {
-      bounds: defaultBounds,
-    });
+      const searchBox = new google.maps.places.SearchBox(input, {
+        bounds: defaultBounds,
+      });
+
+      searchBox.addListener("places_changed", () => {
+        const places = searchBox.getPlaces();
+        if (places.length === 0) return;
+
+        // Update the address state with the selected address
+        setAddress(places[0].formatted_address);
+      });
+    };
+
+    // Load the Google Maps API and initialize Places Autocomplete
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCwms3bNDq_WinjQiQde_JVi6SekPeeCUM&libraries=places`;
+    script.async = true;
+    script.onload = initGooglePlacesAutocomplete;
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
   }, []);
+
+  // useEffect(() => {
+  //   var defaultBounds = new google.maps.LatLngBounds(
+  //     new google.maps.LatLng(25.0637, 55.1374), // Southwest corner of Dubai
+  //     new google.maps.LatLng(25.276987, 55.373655) // Northeast corner of Dubai
+  //   );
+
+  //   var input = document.getElementById("searchTextField");
+
+  //   var searchBox = new google.maps.places.SearchBox(input, {
+  //     bounds: defaultBounds,
+  //   });
+
+  //   searchBox.addListener("places_changed", () => {
+  //     const places = searchBox.getPlaces();
+  //     if (places.length === 0) return;
+
+  //     // Update the address state with the selected address
+  //     setAddress(places[0].formatted_address);
+  //   });
+  // }, []);
 
   const handleBack = () => {
     setStep(step - 1);
@@ -91,6 +144,14 @@ const MultiStepForm = () => {
         payment: true,
       });
       console.log(response);
+      if (response.data.error) {
+        alert(response.data.error);
+      } else {
+        SendConfirmationEmail();
+        alert("Booking has been made");
+        router.push("/profile");
+      }
+
       // Optionally, reset form or show success message
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -100,6 +161,10 @@ const MultiStepForm = () => {
 
   return (
     <div className="booking-form-wrapper">
+      <div>
+        <br />
+        <progress value={step} max="4" />
+      </div>
       <button
         className="back-button"
         disabled={step === 1}
@@ -116,10 +181,6 @@ const MultiStepForm = () => {
           </Link>
         </div>
       )}
-      <div>
-        <br />
-        <progress value={step} max="4" />
-      </div>
 
       {step === 1 && (
         <form onSubmit={handleSubmit(onSubmitAddress)}>
@@ -174,11 +235,11 @@ const MultiStepForm = () => {
             <label htmlFor="option1">
               <input
                 type="radio"
-                id="option1"
+                id="Home"
                 name="options"
-                value="option1"
-                checked={selectedOption === "option1"}
-                onChange={() => setSelectedOption("option1")}
+                value="Home"
+                checked={selectedOption === "Home"}
+                onChange={() => setSelectedOption("Home")}
               />{" "}
               Home
             </label>
@@ -186,11 +247,11 @@ const MultiStepForm = () => {
             <label htmlFor="option2">
               <input
                 type="radio"
-                id="option2"
+                id="Hotel"
                 name="options"
-                value="option2"
-                checked={selectedOption === "option2"}
-                onChange={() => setSelectedOption("option2")}
+                value="Hotel"
+                checked={selectedOption === "Hotel"}
+                onChange={() => setSelectedOption("Hotel")}
               />{" "}
               Hotel
             </label>
@@ -198,11 +259,11 @@ const MultiStepForm = () => {
             <label htmlFor="option3">
               <input
                 type="radio"
-                id="option3"
+                id="Office"
                 name="options"
-                value="option3"
-                checked={selectedOption === "option3"}
-                onChange={() => setSelectedOption("option3")}
+                value="Office"
+                checked={selectedOption === "Office"}
+                onChange={() => setSelectedOption("Office")}
               />{" "}
               Office
             </label>
@@ -210,11 +271,11 @@ const MultiStepForm = () => {
             <label htmlFor="option4">
               <input
                 type="radio"
-                id="option4"
+                id="Other"
                 name="options"
-                value="option4"
-                checked={selectedOption === "option4"}
-                onChange={() => setSelectedOption("option4")}
+                value="Other"
+                checked={selectedOption === "Other"}
+                onChange={() => setSelectedOption("Other")}
               />{" "}
               Other
             </label>

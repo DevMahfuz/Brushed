@@ -15,8 +15,10 @@ export const UserProvider = ({ children }) => {
     const fetchUser = async () => {
       try {
         const supabase = createClient();
-        const { data: user, error } = await supabase.auth.getUser();
-        if (error) {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (!user) {
           throw error;
         }
         setCurrentUser(user);
@@ -26,7 +28,7 @@ export const UserProvider = ({ children }) => {
     };
 
     fetchUser();
-  }, []);
+  }, []); // Empty dependency array to run the effect only once when the component mounts
 
   const value = { currentUser, setCurrentUser };
 

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import "./product.style.css";
 import PreViewService from "./PreViewService";

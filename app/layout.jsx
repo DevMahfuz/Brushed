@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className={GeistSans.className}>
       <body className="bg-background text-foreground">
         <main className="min-h-screen flex flex-col items-center">
-          <script
+          {/* <script
             async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwms3bNDq_WinjQiQde_JVi6SekPeeCUM&loading=async&libraries=places&callback=initMap"
-          ></script>
+          ></script> */}
           <UserProvider>
             <BookingProvider> {children}</BookingProvider>
           </UserProvider>

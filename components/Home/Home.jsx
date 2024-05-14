@@ -15,7 +15,7 @@ const HomePage = () => {
             height="300"
           />
           <h1>BEAUTY ON CALL</h1>
-          <Link href="#">Book Now</Link>
+          <Link href="/booking">Book Now</Link>
         </div>
       </section>
       <section className="home-mission">
@@ -41,7 +41,7 @@ const HomePage = () => {
                 height="500"
                 alt=""
               />
-              <Link href="#"> Book Now</Link>
+              <Link href="/booking"> Book Now</Link>
             </div>
 
             <div className="beauty-card">
@@ -54,7 +54,7 @@ const HomePage = () => {
                 height="500"
                 alt=""
               />
-              <Link href="#"> Book Now</Link>
+              <Link href="/booking"> Book Now</Link>
             </div>
 
             <div className="beauty-card">
@@ -67,7 +67,7 @@ const HomePage = () => {
                 height="500"
                 alt=""
               />
-              <Link href="#"> Book Now</Link>
+              <Link href="/booking"> Book Now</Link>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ const HomePage = () => {
             <span>05</span>Get glam
           </div>
         </div>
-        <Link href="#">Get Start</Link>
+        <Link href="/booking">Get Start</Link>
       </section>
 
       <section className="home-get-to-know">
@@ -111,7 +111,7 @@ const HomePage = () => {
           <p>Background checked</p>
 
           <div className="link">
-            <Link href="#">Book Now</Link>
+            <Link href="/booking">Book Now</Link>
           </div>
         </div>
       </section>
