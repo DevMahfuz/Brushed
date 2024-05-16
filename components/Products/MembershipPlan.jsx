@@ -1,4 +1,10 @@
+"use client";
+
+import axios from "axios";
+import { useRouter } from "next/navigation"; // Import useRouter
+
 const MembershipPlan = () => {
+  const router = useRouter(); // Initialize useRouter
   const plan = [
     {
       id: 1,
@@ -23,6 +29,29 @@ const MembershipPlan = () => {
     },
   ];
 
+  const CreateMembership = async (x) => {
+    // Handle form submission, send data to server
+    try {
+      const response = await axios.post("/api/my-membership", {
+        name: x.name,
+        type: x,
+      });
+
+      if (response.data.error) {
+        alert(response.data.error);
+      } else {
+        SendConfirmationEmail(); // Assuming this function is defined
+        alert("Membership Done!");
+        router.push("/profile");
+      }
+
+      // Optionally, reset form or show success message
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Optionally, show error message
+    }
+  };
+
   return (
     <div className="plan-container">
       {plan.map((x) => {
@@ -30,7 +59,8 @@ const MembershipPlan = () => {
           <div className="plan-item" key={x.id}>
             <h2>{x.name}</h2>
             <p>{x.description}</p>
-            <button>Join Now</button>
+            {/* Pass a function to onClick */}
+            <button onClick={() => CreateMembership(x)}>Join Now</button>
           </div>
         );
       })}

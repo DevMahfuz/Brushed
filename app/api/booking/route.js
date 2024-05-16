@@ -19,17 +19,18 @@ export async function POST(request) {
 
 export async function DELETE(request) {
   const { searchParams } = new URL(request.url);
-  const supabase = createAdminClient();
+  const supabase = createClient();
   const id = searchParams.get("id");
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   if (user) {
-    const { data, error } = await supabase
+    console.log(user);
+    const { error, data } = await supabase
       .from("booking")
-      .update({ address_type: "Australia" })
-      .eq("id", 14);
+      .delete()
+      .eq("id", id);
 
     console.log("data", data);
     if (error) return Response.json({ error });

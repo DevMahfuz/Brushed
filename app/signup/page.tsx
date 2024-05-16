@@ -14,14 +14,14 @@ export default function SignUP({
 
     const origin = headers().get("origin");
     const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
+    // const password = formData.get("password") as string;
     const supabase = createClient();
 
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signInWithOtp({
       email,
-      password,
       options: {
-        emailRedirectTo: `${origin}/auth/callback`,
+        shouldCreateUser: true,
+        emailRedirectTo: "http://localhost:3000/",
       },
     });
 
@@ -29,7 +29,7 @@ export default function SignUP({
       console.log(error);
       return redirect("/signup?message=Could not authenticate user");
     }
-
+    console.log(data);
     return redirect("/signup?message=Check email to continue sign in process");
   };
 
@@ -69,7 +69,7 @@ export default function SignUP({
           placeholder="you@example.com"
           required
         />
-        <label className="text-md" htmlFor="password">
+        {/* <label className="text-md" htmlFor="password">
           Password
         </label>
         <input
@@ -78,7 +78,7 @@ export default function SignUP({
           name="password"
           placeholder="••••••••"
           required
-        />
+        /> */}
 
         <SubmitButton
           formAction={signUp}

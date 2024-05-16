@@ -175,7 +175,7 @@ const MultiStepForm = () => {
 
       {!serviceToAdd && (
         <div className="alert-to-ad-service">
-          <h2>First Choose The Service For Booking</h2>
+          <h2>Choose a Service For Booking</h2>
           <Link href="/services" className="btn-next">
             Check Our Service Here
           </Link>

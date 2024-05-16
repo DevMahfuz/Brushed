@@ -50,6 +50,7 @@
     padding: 100px 20px;
     background-color: #4a686a;
     text-align: center;
+    overflow: hidden;
   }
 
   .membership-hero h1 {

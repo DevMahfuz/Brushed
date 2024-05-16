@@ -41,6 +41,7 @@
 .booking-form-wrapper h2 {
   font-size: 48px;
   font-weight: 750;
+  margin-top: 100px;
 }
 
 .booking-form-wrapper p {
@@ -99,7 +100,7 @@
   font-weight: bold;
   background-color: tomato;
   border-radius: 10px;
-  margin: auto;
+  margin: 30px auto;
   color: #fff;
 }
 
@@ -149,10 +150,16 @@
     width: 80%;
   }
   .booking-form-wrapper .radio {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    gap: 20px;
   }
+
   .booking-form-wrapper .service-card-box {
     width: 100%;
+  }
+  .booking-form-wrapper h2 {
+    font-size: 25px;
+    margin-top: 30px;
   }
 }

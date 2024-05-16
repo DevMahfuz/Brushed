@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/footer/footer";
 import "./how-it-works.css";
+import Link from "next/link";
 
 const HowItWorks = () => {
   return (
@@ -21,9 +22,9 @@ const HowItWorks = () => {
                 </a>
               </div>
 
-              <button color="#F75D51" className="css-1mguv56">
+              <Link href="/booking" color="#F75D51" className="css-1mguv56">
                 Book Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -105,9 +106,9 @@ const HowItWorks = () => {
                   </p>
                 </div>
               </div>
-              <button color="#000" className="css-meot3c">
+              <Link href="/booking" color="#000" className="css-meot3c">
                 Book Now
-              </button>
+              </Link>
             </div>
             <div className="section-wrapper prepping">
               <div className="content">
@@ -137,7 +138,9 @@ const HowItWorks = () => {
                     remove shellac or soakable gels for a $10 fee.
                   </p>
                   <style data-emotion-css="14id2pt"></style>
-                  <button className="css-14id2pt">Book Now</button>
+                  <Link href="/booking" className="css-14id2pt">
+                    Book Now
+                  </Link>
                 </div>
               </div>
               <div className="image-placeholder">
